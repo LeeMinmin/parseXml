@@ -1,0 +1,23 @@
+<?xml version='1.0' ?><testsuites><testsuite><testcase classname="com.umipay.android.umipaysdkdemo.test.N00_TestMain" name="testMain_1" time="27.854" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N00_TestMain" name="testMain_2" time="44.228" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N01_TestRegister" name="testRegister_1" time="15.647" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N01_TestRegister" name="testRegister_2"><failure message=" umipay_register_btn:&#24080;&#21495;&#27880;&#20876;&#25104;&#21151; expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: umipay_register_btn:&#24080;&#21495;&#27880;&#20876;&#25104;&#21151; expected:&lt;true&gt; but was:&lt;false&gt;
+	at com.umipay.android.umipaysdkdemo.test.N01_TestRegister.testRegister_2(N01_TestRegister.java:94)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:214)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:199)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+	at com.neenbedankt.android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:45)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+</failure></testcase><testcase classname="com.umipay.android.umipaysdkdemo.test.N02_TestLogin" name="testLogin_1" time="38.231" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N02_TestLogin" name="testLogin_2"><failure message=" umipay_login_btn expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: umipay_login_btn expected:&lt;true&gt; but was:&lt;false&gt;
+	at com.umipay.android.umipaysdkdemo.test.N02_TestLogin.testLogin_2(N02_TestLogin.java:94)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:214)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:199)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+	at com.neenbedankt.android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:45)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+</failure></testcase><testcase classname="com.umipay.android.umipaysdkdemo.test.N03_TestAccountCenter" name="testAccountCenter_1" time="33.382" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N03_TestAccountCenter" name="testAccountCenter_2" time="100.826" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N03_TestAccountCenter" name="testAccountCenter_3" time="122.025" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N03_TestAccountCenter" name="testAccountCenter_5" time="50.514" /><testcase classname="com.umipay.android.umipaysdkdemo.test.N03_TestAccountCenter" name="testAccountCenter_6" time="147.592" /><system-out /><system-err /></testsuite></testsuites>
