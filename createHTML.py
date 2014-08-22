@@ -124,13 +124,21 @@ def createhtml(xml, projectjob, img_list):
                     tctr = classtr << tr(id='pt1.1', bgcolor='#ADD8E6')
                     tctr << ul(id='testcase')
                     tctr << td(id='none') << div(id='testcase') << p('%s' %allresult[i][j]['testcase'])
-                    tctr << td(id='none', colspan='5', align='center') << div(id='testcase') << p('%s' % (allresult[i][j]['testresult'] + '<br/><a href="img/'+ allresult[i][j]['img_url'] +'">'+ allresult[i][j]['img_url'] +'<a/><br/>' + allresult[i][j]['fmsg']))
+                    if(allresult[i][j]['fmsg'] != ''):
+                        tctr << td(id='none', colspan='5', align='center') << div(id='testcase') << p('%s' % (allresult[i][j]['testresult'] + '<br/><a href="img/'+ allresult[i][j]['img_url'] +'">'+ allresult[i][j]['img_url'] +'<a/><br/>' + allresult[i][j]['fmsg']))
+                    else:
+                        tctr << td(id='none', colspan='5', align='center') << div(id='testcase') << p('%s' % allresult[i][j]['testresult'])
     #page.printOut()
     return page
 
 
 def exportFile(source, target):
     cmd = 'adb pull ' + source + ' ' + target
+    os.system(cmd)
+
+
+def deleteFile(file):
+    cmd = 'adb shell rm -r ' + file
     os.system(cmd)
 
 
@@ -145,10 +153,13 @@ if __name__ == "__main__":
     exportFile(sourceImg, target_img_path)
 
     img_list = os.listdir(target_img_path)
+    img_list.reverse()
 
     projectjob = '/home/min/workspace/htmlReports/testReport'
     temphtml = projectjob + '.html'
     buildlink = ''
     page = createhtml(xmf, projectjob, img_list)
     page.printOut(temphtml)
+    deleteFile(sourceImg)
+
     print "testdone"
