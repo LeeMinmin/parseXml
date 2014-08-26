@@ -142,24 +142,28 @@ def deleteFile(file):
     os.system(cmd)
 
 
+def start_test():
+    cmd = 'adb shell am instrument -e class com.umipay.android.umipaysdkdemo.test.FullSuite -w com.umipay.android.umipaysdkdemo.test/com.neenbedankt.android.test.InstrumentationTestRunner'
+    res = os.system(cmd)
+    return res
+
 if __name__ == "__main__":
-    sourceXml = 'data/data/com.umipay.android.umipaysdkdemo/files/TEST-all.xml'
-    target_path = '/home/min/workspace/htmlReports/'
-    exportFile(sourceXml, target_path)
-    xmf = target_path + 'TEST-all.xml'
-
-    sourceImg = 'sdcard/Robotium-ScreenShots'
-    target_img_path = '/home/min/workspace/htmlReports/img/'
-    exportFile(sourceImg, target_img_path)
-
-    img_list = os.listdir(target_img_path)
-    img_list.reverse()
-
-    projectjob = '/home/min/workspace/htmlReports/testReport'
-    temphtml = projectjob + '.html'
-    buildlink = ''
-    page = createhtml(xmf, projectjob, img_list)
-    page.printOut(temphtml)
-    deleteFile(sourceImg)
-
-    print "testdone"
+    result = start_test()
+    if result == 0:
+        sourceXml = 'data/data/com.umipay.android.umipaysdkdemo/files/TEST-all.xml'
+        target_path = '/home/min/workspace/htmlReports/'
+        exportFile(sourceXml, target_path)
+        xmf = target_path + 'TEST-all.xml'
+        sourceImg = 'sdcard/Robotium-ScreenShots'
+        target_img_path = '/home/min/workspace/htmlReports/img/'
+        exportFile(sourceImg, target_img_path)
+        img_list = os.listdir(target_img_path)
+        img_list.reverse()
+        projectjob = '/home/min/workspace/htmlReports/testReport'
+        temphtml = projectjob + '.html'
+        buildlink = ''
+        page = createhtml(xmf, projectjob, img_list)
+        page.printOut(temphtml)
+        deleteFile(sourceImg)
+        deleteFile(sourceXml)
+        print "testdone"
